@@ -1,15 +1,15 @@
-<p>page-login works!</p>
+<p>page-login works! {{selectedForm()}}</p>
 
-@if (selectedForm == 'Credential'){
- <app-form-credential></app-form-credential>
+@if (selectedForm() == 1){
+    <app-form-credential></app-form-credential>
 }
-@else if (selectedForm == 'Tag') {
+@else if (selectedForm() == 2) {
 
 }
-@else if (selectedForm == 'Allergy') {
+@else if (selectedForm() == 3) {
     
 }
-@else if (selectedForm == 'FavoriteFood') {
+@else if (selectedForm() == 4) {
     
 }
 

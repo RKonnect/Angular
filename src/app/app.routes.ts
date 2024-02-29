@@ -4,7 +4,7 @@ import {PageInvitationComponent} from "./pages/invitation/page-invitation/page-i
 import {PageLaunchComponent} from "./pages/launch/page-launch/page-launch.component";
 import {PageNotificationsComponent} from "./pages/notifications/page-notifications/page-notifications.component";
 import {PageProfileComponent} from "./pages/profile/page-profile/page-profile.component";
-import {PageRegisterComponent} from "./pages/register/page-register/page-register.component";
+// import {PageRegisterComponent} from "./pages/register/page-register/page-register.component";
 import {PageRestaurantComponent} from "./pages/restaurant/page-restaurant/page-restaurant.component";
 import {PageSettingsComponent} from "./pages/settings/page-settings/page-settings.component";
 import {PageLoginComponent} from "./pages/login/page-login/page-login.component";
@@ -33,12 +33,12 @@ export const routes: Routes = [
       import('./pages/login/page-login/page-login.component')
         .then(m => m.PageLoginComponent)
   },
-  {
-    path: "register",
-    loadComponent: () =>
-      import('./pages/register/page-register/page-register.component')
-        .then(m => PageRegisterComponent)
-  },
+  // {
+  //   path: "register",
+  //   loadComponent: () =>
+  //     import('./pages/register/page-register/page-register.component')
+  //       .then(m => PageRegisterComponent)
+  // },
   {
     path: "restaurant",
     loadComponent: () =>

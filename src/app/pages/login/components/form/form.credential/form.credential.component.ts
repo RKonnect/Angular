@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-form.credential',
+  selector: 'app-form-credential',
   standalone: true,
   imports: [],
   templateUrl: './form.credential.component.html',
