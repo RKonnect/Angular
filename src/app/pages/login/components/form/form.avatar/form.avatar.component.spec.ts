@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageRegisterComponent } from './page-register.component';
+import { FormAvatarComponent } from './form.avatar.component';
 
-describe('PageRegisterComponent', () => {
-  let component: PageRegisterComponent;
-  let fixture: ComponentFixture<PageRegisterComponent>;
+describe('FormAvatarComponent', () => {
+  let component: FormAvatarComponent;
+  let fixture: ComponentFixture<FormAvatarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PageRegisterComponent]
+      imports: [FormAvatarComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PageRegisterComponent);
+    fixture = TestBed.createComponent(FormAvatarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
