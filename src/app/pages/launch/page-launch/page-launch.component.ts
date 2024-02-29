@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-// Note: Removed direct import of Swiper here as we're now dynamically importing it within the method
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -12,46 +10,39 @@ import 'swiper/css/pagination';
   styleUrls: ['./page-launch.component.scss']
 })
 export class PageLaunchComponent {
-  swiper: any; // Ajoutez cette ligne pour déclarer l'instance de Swiper
+  swiper: any;
 
   constructor() { }
 
-  async ngAfterViewInit() { // Added async keyword here
+  allerAPage(page: number) {
+    this.swiper.slideTo(page - 1);
+  }
+
+  suivant() {
+    this.swiper.slideNext();
+  }
+  async ngAfterViewInit() {
     const { Swiper } = await import('swiper');
 
     const swiper = new Swiper('.swiper', {
-      // Swiper options
       direction: 'horizontal',
       loop: true,
 
-      // If you need pagination
       pagination: {
         el: '.swiper-pagination',
       },
 
-      // Navigation arrows
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
 
-      // And if you need scrollbar
       scrollbar: {
         el: '.swiper-scrollbar',
       },
     });
   }
-  allerAPage(page: number) {
-    if (this.swiperRef && this.swiperRef.swiperRef) {
-      this.swiperRef.swiperRef.slideTo(page - 1);
-    }
-  }
 
-  suivant() {
-    if (this.swiperRef && this.swiperRef.swiperRef) {
-      this.swiperRef.swiperRef.slideNext();
-    }
-  }
   activateGeolocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
