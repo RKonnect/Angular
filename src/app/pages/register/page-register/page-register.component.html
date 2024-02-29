@@ -1,14 +1,21 @@
-@if (selectedForm() == 1){
-    <app-form-credential></app-form-credential>
-}
-@else if (selectedForm() == 2) {
+<div class="wrap">
+    <section class="form">
+        
+    <!-- <div @if(!selectedForm() != 1) class="icon"> < </div> -->
+    @if (selectedForm() == 1){
+        <app-form-credential></app-form-credential>
+    }
+    @else if (selectedForm() == 2) {
 
-}
-@else if (selectedForm() == 3) {
-    
-}
-@else if (selectedForm() == 4) {
-    
-}
+    }
+    @else if (selectedForm() == 3) {
+        
+    }
+    @else if (selectedForm() == 4) {
+        
+    }
+    </section>
+
+</div>
 
 

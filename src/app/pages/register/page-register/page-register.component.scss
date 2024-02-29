@@ -1,0 +1,22 @@
+.wrap {
+  border: black 1px solid;
+  max-width: 1200px;
+  height: 100svh;
+  margin: 0 auto;
+  .form {
+    position: relative;
+    .icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 30px;
+      padding: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .6s;
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
