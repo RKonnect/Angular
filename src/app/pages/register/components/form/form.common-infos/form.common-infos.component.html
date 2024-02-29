@@ -1,1 +1,22 @@
-<p>form.common-infos works!</p>
+<app-title-subtitle [title]="title" [subTitle]="subTitle"></app-title-subtitle>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <label for="nameInput">Name:</label>
+  <input type="text" id="nameInput" formControlName="name" />
+
+  <label for="surnameInput">Surname:</label>
+  <input type="text" id="surnameInput" formControlName="surname" />
+
+  <label for="pseudoInput">Pseudo:</label>
+  <input type="text" id="pseudoInput" formControlName="pseudo" />
+
+  <label for="genderInput">Gender:</label>
+  <input type="text" id="genderInput" formControlName="gender" />
+
+  <label for="dateOfBirthInput">Date of Birth:</label>
+  <input type="text" id="dateOfBirthInput" formControlName="dateOfBirth" />
+
+  <app-buttons
+    [type]="TypeButtonEnum.submit"
+    [buttonText]="'Suivant'"
+  ></app-buttons>
+</form>
