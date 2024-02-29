@@ -1,7 +1,7 @@
 import {GenderEnum} from "./enum/gender.enum";
 import {RoleEnum} from "./enum/role.enum";
 
-interface User {
+export interface User {
   id?: number,
   name?: string,
   surname?: string,
