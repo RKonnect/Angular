@@ -1,17 +1,17 @@
 import {Component, signal} from '@angular/core';
-import {ListFormName} from '../../../pages/enum/listfFormName.enum';
+import {ListFormName} from '../../enum/listfFormName.enum';
 import { FormCredentialComponent } from '../components/form/form.credential/form.credential.component';
 import { FormCommonInfosComponent } from '../components/form/form.common-infos/form.common-infos.component';
 // import { FormCredentialComponent } from '../components/form/form.credential/form.credential.component';
 
 @Component({
-  selector: 'app-page-login',
+  selector: 'app-page-register',
   standalone: true,
   imports: [FormCredentialComponent],
-  templateUrl: './page-login.component.html',
-  styleUrl: './page-login.component.scss'
+  templateUrl: './page-register.component.html',
+  styleUrl: './page-register.component.scss'
 })
-export class PageLoginComponent {
+export class PageRegisterComponent {
 
   // selectedForm: ListFormName = ListFormName.Credential;
   selectedForm: any = signal(ListFormName.Credential);
