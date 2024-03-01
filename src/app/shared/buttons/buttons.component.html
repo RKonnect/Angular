@@ -1,1 +1,8 @@
-<button [style.background]="buttonColor" [style.color]="textColor" (click)="changeText()"> {{ buttonText }} </button>
+<button
+  [type]="type"
+  [style.background]="buttonColor"
+  [style.color]="textColor"
+  (click)="changeText()"
+>
+  {{ buttonText }}
+</button>

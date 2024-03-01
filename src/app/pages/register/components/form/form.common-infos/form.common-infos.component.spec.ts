@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageRegisterComponent } from './page-register.component';
+import { FormCommonInfosComponent } from './form.common-infos.component';
 
-describe('PageLoginComponent', () => {
-  let component: PageRegisterComponent;
-  let fixture: ComponentFixture<PageRegisterComponent>;
+describe('FormCommonInfosComponent', () => {
+  let component: FormCommonInfosComponent;
+  let fixture: ComponentFixture<FormCommonInfosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PageRegisterComponent]
+      imports: [FormCommonInfosComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PageRegisterComponent);
+    fixture = TestBed.createComponent(FormCommonInfosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

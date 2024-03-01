@@ -4,12 +4,12 @@ import {PageInvitationComponent} from "./pages/invitation/page-invitation/page-i
 import {PageLaunchComponent} from "./pages/launch/page-launch/page-launch.component";
 import {PageNotificationsComponent} from "./pages/notifications/page-notifications/page-notifications.component";
 import {PageProfileComponent} from "./pages/profile/page-profile/page-profile.component";
-import {PageRegisterComponent} from "./pages/register/page-register/page-register.component";
+// import {PageRegisterComponent} from "./pages/register/page-register/page-register.component";
 import {PageRestaurantComponent} from "./pages/restaurant/page-restaurant/page-restaurant.component";
 import {PageSettingsComponent} from "./pages/settings/page-settings/page-settings.component";
-import {PageLoginComponent} from "./pages/login/page-login/page-login.component";
 import {PageRecentMeetingComponent} from "./pages/recentMeeting/page-recent-meeting/page-recent-meeting.component";
 import {PageReservationsComponent} from "./pages/reservations/page-reservations/page-reservations.component";
+import { PageRegisterComponent } from './pages/register/page-register/page-register.component';
 
 export const routes: Routes = [
   {
@@ -27,12 +27,12 @@ export const routes: Routes = [
     path: "home",
     component: PageHomeComponent
   },
-  {
-    path: "login",
-    loadComponent: () =>
-      import('./pages/login/page-login/page-login.component')
-        .then(m => m.PageLoginComponent)
-  },
+  // {
+  //   path: "login",
+  //   loadComponent: () =>
+  //     import('./pages/login/page-login/page-login.component')
+  //       .then(m => m.PageLoginComponent)
+  // },
   {
     path: "register",
     loadComponent: () =>
@@ -69,12 +69,12 @@ export const routes: Routes = [
       import('./pages/settings/page-settings/page-settings.component')
         .then(m => PageSettingsComponent)
   },
-  {
-    path: "login",
-    loadComponent: () =>
-      import('./pages/login/page-login/page-login.component')
-        .then(m => PageLoginComponent)
-  },
+  // {
+  //   path: "login",
+  //   loadComponent: () =>
+  //     import('./pages/login/page-login/page-login.component')
+  //       .then(m => PageLoginComponent)
+  // },
   {
     path: "recentMeeting",
     loadComponent: () =>

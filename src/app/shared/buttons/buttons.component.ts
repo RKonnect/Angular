@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TypeButtonEnum } from '../../core/models/enum/typeButton.enum';
 
 @Component({
   selector: 'app-buttons',
@@ -8,9 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './buttons.component.scss'
 })
 export class ButtonsComponent {
-  buttonText: string = 'Texte';
-  buttonColor: string = '  #D9D18C';
-  textColor: string = 'black';
+  @Input() buttonText: string = 'Texte';
+  @Input() type: TypeButtonEnum = TypeButtonEnum.button;
+  @Input() buttonColor: string = '#D9D18C';
+  @Input() textColor: string = 'black';
 
   changeText() {
     this.buttonText = 'Texte apres clic';
