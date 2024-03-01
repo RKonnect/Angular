@@ -1,0 +1,61 @@
+<div class="swiper invite-container">
+  <div class="swiper-wrapper">
+    <!-- slide 1 -->
+    <div class="swiper-slide">
+      <div class="header-swiper">
+        <h1 class="title">Je t'invite</h1>
+        <br /><br />
+        <p class="subTitle">
+          1 Afin de profiter au maximum de l'application, vous devez activer la
+          géolocalisation.
+        </p>
+      </div>
+      <button (click)="allerAPage(1)">Page 1</button>
+      <button (click)="allerAPage(2)">Page 2</button>
+      <button (click)="allerAPage(3)">Page 3</button>
+
+      <button class="btn-activate" (click)="activateGeolocation()">
+        Activer la géolocalisation</button
+      ><br />
+      <div class="middle-swiper">
+        <img src="../../../../assets/geolocValidate.png" width="90%" alt="" />
+      </div>
+    </div>
+    <!-- slide 2 -->
+    <div class="swiper-slide">
+      <div class="header-swiper">
+        <h1 class="title">Je t'invite</h1>
+        <br /><br />
+        <p class="subTitle">
+          1 Afin de profiter au maximum de l'application, vous devez activer la
+          géolocalisation.
+        </p>
+      </div>
+      <button class="btn-activate" (click)="suivant()">
+        Activer la géolocalisation</button
+      ><br />
+      <div class="middle-swiper">
+        <img src="../../../../assets/geolocValidate.png" width="90%" alt="" />
+      </div>
+    </div>
+
+    <!-- slide 3 -->
+    <div class="swiper-slide">
+      <div class="header-swiper">
+        <h1 class="title">Je t'invite</h1>
+        <br /><br />
+        <p class="subTitle">
+          1 Afin de profiter au maximum de l'application, vous devez activer la
+          géolocalisation.
+        </p>
+      </div>
+      <button class="btn-activate" (click)="suivant()">
+        Activer la géolocalisation</button
+      ><br />
+      <div class="middle-swiper">
+        <img src="../../../../assets/geolocValidate.png" width="90%" alt="" />
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>

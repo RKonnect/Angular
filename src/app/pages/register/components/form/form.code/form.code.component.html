@@ -1,0 +1,10 @@
+<app-title-subtitle [title]="title" [subTitle]="subTitle"></app-title-subtitle>
+<form [formGroup]="formNumber" (ngSubmit)="onSubmit()">
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" formControlName="number">
+  
+    <app-buttons
+      [type]="TypeButtonEnum.submit"
+      [buttonText]="'Suivant'"
+    ></app-buttons>
+</form>

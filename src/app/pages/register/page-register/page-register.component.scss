@@ -1,0 +1,16 @@
+.form {
+  position: relative;
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 30px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.6s;
+    &:hover {
+      color: red;
+    }
+  }
+}
