@@ -12,8 +12,6 @@ import { TypeButtonEnum } from '../../../../../core/models/enum/typeButton.enum'
   imports: [TitleSubtitleComponent, ButtonsComponent, FormsModule, ReactiveFormsModule]
 })
 export class FormCodeComponent {
-  title: string = "Verification par code";
-  subTitle: string = "Renseigne  le code de vérification envoyé à l’adresse e-mail b**********@gmail.com";
   TypeButtonEnum = TypeButtonEnum
   @Output() emitData: EventEmitter<void> = new EventEmitter();
   formNumber: FormGroup = new FormGroup({

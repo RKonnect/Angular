@@ -12,6 +12,4 @@ import { TitleSubtitleComponent } from '../../../../../shared/title-subtitle/tit
 })
 export class FormAvatarComponent {
   @Output() emitData: EventEmitter<string> = new EventEmitter();
-  title: string = "Choisis ton avatar";
-  subTitle: string = "Ton avatar sera public et visible par les utilisateurs de l’app. Choisis celui qui te correspond le plus.";
 }
