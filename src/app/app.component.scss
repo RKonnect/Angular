@@ -1,0 +1,12 @@
+// WRAP du site Angular
+.wrap {
+  border: black 1px solid;
+  max-width: 1200px;
+  height: 100svh;
+  margin: 0 auto;
+
+  .pages {
+    height: calc(100svh - 151px);
+    overflow-y: scroll;
+  }
+}

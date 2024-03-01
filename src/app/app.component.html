@@ -1,3 +1,9 @@
-<div class="app">
-  <router-outlet />
+<div class="app wrap">
+  @if(true) {
+  <app-searchbar></app-searchbar>
+  }
+  <div class="pages">
+    <router-outlet />
+  </div>
+  <app-navbar></app-navbar>
 </div>
