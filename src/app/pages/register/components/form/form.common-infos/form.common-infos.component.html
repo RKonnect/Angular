@@ -1,5 +1,6 @@
 <app-title-subtitle title="On a besoin d’infos..." subTitle=" Promis c’est rapide !"
                     class="title-box"></app-title-subtitle>
+
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <label for="nameInput">Nom :</label>
   <input type="text" id="nameInput" formControlName="name"/>
