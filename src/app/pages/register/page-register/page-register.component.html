@@ -7,7 +7,10 @@
     }
 
     @if (selectedForm == listFormName.Credential){
-        <app-form-credential (emitData)="getCredential($event)"></app-form-credential>
+        <app-form-credential 
+        [credential]="newUser" 
+        (emitData)="getCredential($event)">
+        </app-form-credential>
     }
     @else if (selectedForm == listFormName.Code) {
         <app-form-code (emitData)="getCode()"></app-form-code>

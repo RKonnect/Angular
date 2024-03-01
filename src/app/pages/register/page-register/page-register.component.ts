@@ -1,15 +1,16 @@
-import { Component, CreateSignalOptions, signal, Pipe } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ListFormName } from '../../enum/listfFormName.enum';
 import { FormCredentialComponent } from '../components/form/form.credential/form.credential.component';
 import { FormCommonInfosComponent } from '../components/form/form.common-infos/form.common-infos.component';
 import { User } from '../../../core/models/User';
 import { CredentialDto } from '../../../core/models/dto/credential.dto';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { async } from '@angular/core/testing';
 import { FormCodeComponent } from "../components/form/form.code/form.code.component";
 import { FormAvatarComponent } from "../components/form/form.avatar/form.avatar.component";
 import { UserCommonInfoDto } from '../../../core/models/dto/userCommonInfo.dto';
 import { FormUserTagsComponent } from '../components/form/form.user-tags/form.user-tags.component';
+import { AuthService } from '../../../core/services/auth/auth.service';
+import { Subscriber, Subscription } from 'rxjs';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 // import { FormCredentialComponent } from '../components/form/form.credential/form.credential.component';
 
 @Component({
@@ -17,7 +18,8 @@ import { FormUserTagsComponent } from '../components/form/form.user-tags/form.us
   standalone: true,
   templateUrl: './page-register.component.html',
   styleUrl: './page-register.component.scss',
-  imports: [FormCredentialComponent, FormCodeComponent, FormAvatarComponent, FormCommonInfosComponent, FormUserTagsComponent]
+  imports: [FormCredentialComponent, FormCodeComponent, FormAvatarComponent, FormCommonInfosComponent, FormUserTagsComponent, HttpClientModule],
+  providers: [AuthService]
 })
 export class PageRegisterComponent {
 
@@ -25,6 +27,8 @@ export class PageRegisterComponent {
   selectedForm: number = ListFormName.Credential;
   listFormName = ListFormName
   newUser: User = {}
+  credential : CredentialDto = {email: '', password: ''}
+  authService: AuthService = inject(AuthService)
 
   backPage() {
     this.selectedForm -= 1
@@ -32,6 +36,7 @@ export class PageRegisterComponent {
 
   getCredential($event: CredentialDto) {
     this.newUser = { ...this.newUser, ...$event };
+    this.credential = { ...this.credential, ...$event };
     this.selectedForm += 1
   }
   getCode() {
@@ -49,7 +54,18 @@ export class PageRegisterComponent {
   }
 
   getTags() {
-    // c'est le derniers form c'est là qu'on va envoyer le user
+    this.postNewUser()
+  }
+
+  postNewUser(){
+    console.log({u: this.newUser})
+    console.log({ c: this.credential })
+
+    const subscription: Subscription = this.authService.register(this.credential).subscribe({
+      next: (response) => console.log('new User', { response }),
+      error: (err) => console.error('Error in registration', { err }),
+      complete: () => subscription.unsubscribe(),
+    });
   }
 
 }

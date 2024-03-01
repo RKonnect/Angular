@@ -1,1 +1,7 @@
 <app-title-subtitle [title]="title" [subTitle]="subTitle"></app-title-subtitle>
+
+<app-buttons
+    (click)="onSubmit()"
+    [type]="TypeButtonEnum.submit"
+    [buttonText]="'Finaliser mon profil'"
+></app-buttons>

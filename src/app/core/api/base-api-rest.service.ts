@@ -9,11 +9,12 @@ export abstract class BaseApiRestService {
   constructor(path?: string) {
     this.apiUrl = environment.apiUrl + (path ? path + '/' : '/');
     this.headers = new HttpHeaders({
+      'Accept': 'application/json',
       'Content-Type': 'application/json',
       // 'Authorization': `Bearer ${localStorage.getItem('token')}`
     });
     this.headerFormData = new HttpHeaders({
-      'Authorization': `Bearer ${localStorage.getItem('token')}`,
+      // 'Authorization': `Bearer ${localStorage.getItem('token')}`,
 
     });
   }
