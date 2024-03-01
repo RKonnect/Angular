@@ -1,11 +1,13 @@
-<div class="wrap">
+<div class="form-container">
 
     <section class="form">
-        {{selectedForm}}
-    @if(selectedForm != 1)  {
-    <div (click)="backPage()" class="icon"> < </div>
-    }
+        <!-- {{selectedForm}} -->
+        @if(selectedForm != 1) {
+        <div (click)="backPage()" class="icon">
+            < </div>
+                }
 
+<<<<<<< HEAD
     @if (selectedForm == listFormName.Credential){
         <app-form-credential 
         [credential]="newUser" 
@@ -24,8 +26,23 @@
     @else if (selectedForm == listFormName.Tag) {
         <app-form-user-tags (emitData)="getTags()"></app-form-user-tags>
     }
+=======
+                @if (selectedForm == listFormName.Credential){
+                <app-form-credential (emitData)="getCredential($event)" class="form-box"></app-form-credential>
+                }
+                @else if (selectedForm == listFormName.Code) {
+                <app-form-code (emitData)="getCode()" class="form-box"></app-form-code>
+                }
+                @else if (selectedForm == listFormName.Avatar) {
+                <app-form-avatar (emitData)="getAvatar($event)" class="form-box"></app-form-avatar>
+                }
+                @else if (selectedForm == listFormName.CommonInfo) {
+                <app-form-common-infos (emitData)="getCommonInfo($event)" class="form-box"></app-form-common-infos>
+                }
+                @else if (selectedForm == listFormName.Tag) {
+                <app-form-user-tags (emitData)="getTags()" class="form-box"></app-form-user-tags>
+                }
+>>>>>>> 48da4f7 (Feat: Start register form style)
     </section>
 
 </div>
-
-

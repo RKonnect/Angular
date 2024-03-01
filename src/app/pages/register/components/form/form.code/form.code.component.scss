@@ -1,0 +1,27 @@
+@import "../../../../../../variables.scss";
+form {
+  display: flex;
+  flex-direction: column;
+  label {
+    margin-bottom: 5px;
+  }
+  input {
+    width: 300px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid $black;
+    border-radius: 5px;
+  }
+  span {
+    font-size: 13px;
+    text-align: left;
+  }
+  .form-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    &:last-child{
+      margin-top: 10px;
+    }
+  }
+}

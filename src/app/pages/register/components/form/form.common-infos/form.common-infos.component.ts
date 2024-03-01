@@ -15,8 +15,6 @@ import { TypeButtonEnum } from '../../../../../core/models/enum/typeButton.enum'
 export class FormCommonInfosComponent {
   @Input() userCommonInfo!: UserCommonInfoDto
   @Output() emitData: EventEmitter<UserCommonInfoDto> = new EventEmitter();
-  title: string = "On a besoin d’infos...";
-  subTitle: string = "Promis c’est rapide !";
   TypeButtonEnum = TypeButtonEnum
   loginForm: FormGroup = new FormGroup({
     name: new FormControl(this.userCommonInfo?.name, [Validators.required]),

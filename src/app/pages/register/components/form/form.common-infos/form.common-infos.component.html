@@ -1,4 +1,4 @@
-<app-title-subtitle [title]="title" [subTitle]="subTitle"></app-title-subtitle>
+<app-title-subtitle title="On a besoin d’infos..." subTitle=" Promis c’est rapide !" class="title-box"></app-title-subtitle>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <label for="nameInput">Name:</label>
   <input type="text" id="nameInput" formControlName="name" />
@@ -15,8 +15,5 @@
   <label for="dateOfBirthInput">Date of Birth:</label>
   <input type="text" id="dateOfBirthInput" formControlName="dateOfBirth" />
 
-  <app-buttons
-    [type]="TypeButtonEnum.submit"
-    [buttonText]="'Suivant'"
-  ></app-buttons>
+  <app-buttons [type]="TypeButtonEnum.submit" [buttonText]="'Suivant'" class="form-button"></app-buttons>
 </form>
