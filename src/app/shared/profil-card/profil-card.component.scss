@@ -12,7 +12,7 @@
         padding: 0 35px;
 
         position: relative;
-        margin-top: 65px;
+        margin-top: 15px;
         padding-top: 65px;
         box-sizing: border-box;
 
@@ -60,4 +60,10 @@
             margin: 10px;
         }
     }
+}
+
+.label-flex{
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
 }
