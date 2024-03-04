@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    justify-content: center;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 10px;
+
+    .card-reservation {
+        display: flex;
+        flex-direction: column;
+        background-color: #F3F1DB;
+        width: 90vw;
+        border-radius: 20px;
+        padding: 15px 10px;
+
+        .guest-list {
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+            .guest-single {
+                margin-bottom: 10px;
+
+                .card-image {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+
+                }
+            }
+
+        }
+
+        .card-date {}
+
+        .card-place {}
+    }
+}
