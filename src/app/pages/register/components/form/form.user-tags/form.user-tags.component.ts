@@ -20,4 +20,5 @@ export class FormUserTagsComponent {
   onSubmit() {
     this.emitData.emit();
   }
+
 }
