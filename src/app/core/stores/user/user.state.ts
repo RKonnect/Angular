@@ -3,7 +3,8 @@ import { User } from "../../models/User";
 import { Injectable, inject } from "@angular/core";
 import { Login } from "./user.action";
 import { AuthService } from "../../services/auth/auth.service";
-
+import { jwtDecode } from "jwt-decode";
+import { Subscription } from "rxjs";
 
 export interface UserModel {
     user: User | null,
@@ -24,24 +25,29 @@ export class UserState {
 
     @Action(Login)
     login(ctx: StateContext<UserModel>, action: Login) {
-        return this.authService.login(action.credential).subscribe({
-            next: (response) => {
-                const JWT = response
+        console.info('states')
+        const subscriber: Subscription = this.authService.login(action.credential).subscribe({
+            next: (token) => {
+                // mettre le JWT dans le local storage
+                localStorage.setItem("JWT", token);
                 // Faire le decode
-
-                // mettre le JWT dans le localstorage
-
+                const JWT = jwtDecode(token);
+                console.info({ JWT })
                 // caster le USER
-
+                const User = JWT as User
                 // set le state
-
+                ctx .setState({
+                    user: User,
+                    isLogging: true
+                })
             },
             error: (err) => {
                 ctx.setState({
                     user: null,
                     isLogging: false
                 })
-            }
+            }, 
+            complete: () => subscriber.unsubscribe()
         })
     }
 

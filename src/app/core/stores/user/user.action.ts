@@ -4,7 +4,9 @@ import { CredentialDto } from '../../models/dto/credential.dto';
 
 export class Login {
     static readonly type = '[User Login] Login';
-    constructor(public credential: CredentialDto) { }
+    constructor(public credential: CredentialDto) { 
+        console.log({action : credential})
+    }
 }
 
 export class SignIn {

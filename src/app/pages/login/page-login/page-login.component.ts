@@ -4,6 +4,8 @@ import { CredentialDto } from '../../../core/models/dto/credential.dto';
 import { AuthService } from '../../../core/services/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Subscription } from 'rxjs';
+import { Store } from '@ngxs/store';
+import { Login } from '../../../core/stores/user/user.action';
 
 @Component({
     selector: 'app-page-login',
@@ -16,8 +18,12 @@ import { Subscription } from 'rxjs';
 export class PageLoginComponent {
 
   authService: AuthService = inject(AuthService)
-  getCredential($event: CredentialDto) {
-    this.apiLogin($event)
+  store: Store = inject(Store)
+  getCredential(credential: CredentialDto) {
+   // this.apiLogin($event)
+   console.log({credential})
+    this.store.dispatch(new Login(credential));
+
   }
 
   apiLogin(credential: CredentialDto) {
