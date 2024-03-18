@@ -11,6 +11,7 @@
         width: 90vw;
         border-radius: 20px;
         padding: 15px 10px;
+        text-align: center;
 
         .guest-list {
             text-align: center;
@@ -19,20 +20,30 @@
             flex-wrap: wrap;
 
             .guest-single {
+                margin-top: 5px;
                 margin-bottom: 10px;
 
                 .card-image {
                     width: 50px;
                     height: 50px;
                     border-radius: 50%;
+                }
 
+                .card-guest-name {
+                    font-weight: 300;
                 }
             }
-
         }
 
-        .card-date {}
+        .card-text {
+            font-size: 15px;
+            line-height: 15px;
+            font-weight: 300;
+            margin-top: 20px;
 
-        .card-place {}
+            .bold-text{
+                font-weight: 400;
+            }
+        }
     }
 }

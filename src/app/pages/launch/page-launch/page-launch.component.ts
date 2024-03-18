@@ -6,6 +6,7 @@ import 'swiper/css/pagination';
 @Component({
   selector: 'app-page-launch',
   standalone: true,
+  imports: [],
   templateUrl: './page-launch.component.html',
   styleUrls: ['./page-launch.component.scss']
 })
