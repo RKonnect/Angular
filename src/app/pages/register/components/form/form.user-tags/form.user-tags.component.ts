@@ -4,6 +4,7 @@ import { ButtonsComponent } from '../../../../../shared/buttons/buttons.componen
 import { TitleSubtitleComponent } from '../../../../../shared/title-subtitle/title-subtitle.component';
 import { TypeButtonEnum } from '../../../../../core/models/enum/typeButton.enum';
 
+
 @Component({
   selector: 'app-form-user-tags',
   standalone: true,
@@ -20,5 +21,4 @@ export class FormUserTagsComponent {
   onSubmit() {
     this.emitData.emit();
   }
-
 }
