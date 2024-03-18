@@ -10,6 +10,7 @@ import {PageSettingsComponent} from "./pages/settings/page-settings/page-setting
 import {PageRecentMeetingComponent} from "./pages/recentMeeting/page-recent-meeting/page-recent-meeting.component";
 import {PageReservationsComponent} from "./pages/reservations/page-reservations/page-reservations.component";
 import { PageRegisterComponent } from './pages/register/page-register/page-register.component';
+import {PageLoginComponent} from "./pages/login/page-login/page-login.component";
 
 export const routes: Routes = [
   {
@@ -69,12 +70,12 @@ export const routes: Routes = [
       import('./pages/settings/page-settings/page-settings.component')
         .then(m => PageSettingsComponent)
   },
-  // {
-  //   path: "login",
-  //   loadComponent: () =>
-  //     import('./pages/login/page-login/page-login.component')
-  //       .then(m => PageLoginComponent)
-  // },
+  {
+    path: "login",
+    loadComponent: () =>
+      import('./pages/login/page-login/page-login.component')
+        .then(m => PageLoginComponent)
+  },
   {
     path: "recentMeeting",
     loadComponent: () =>
