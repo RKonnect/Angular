@@ -1,10 +1,10 @@
-<app-title-subtitle [title]="title" [subTitle]="subTitle"></app-title-subtitle>
+<app-title-subtitle title="Verification par code"
+  subTitle="Renseigne  le code de vérification envoyé à l’adresse e-mail b**********@gmail.com"
+  class="title-box"></app-title-subtitle>
 <form [formGroup]="formNumber" (ngSubmit)="onSubmit()">
-    <label for="numberInput">Enter a number:</label>
-    <input type="number" id="numberInput" formControlName="number">
-  
-    <app-buttons
-      [type]="TypeButtonEnum.submit"
-      [buttonText]="'Suivant'"
-    ></app-buttons>
+  <label for="numberInput"></label>
+  <input type="number" id="numberInput" formControlName="number">
+  <span>Tu n'as pas reçu le code ?</span>
+  <app-buttons [type]="TypeButtonEnum.submit" [buttonText]="'Vérifier le code'" class="form-button"></app-buttons>
+  <app-buttons [buttonText]="'Renvoyer le code (30s)'" class="form-button"></app-buttons>
 </form>
