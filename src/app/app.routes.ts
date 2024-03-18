@@ -27,12 +27,12 @@ export const routes: Routes = [
     path: "home",
     component: PageHomeComponent
   },
-  // {
-  //   path: "login",
-  //   loadComponent: () =>
-  //     import('./pages/login/page-login/page-login.component')
-  //       .then(m => m.PageLoginComponent)
-  // },
+  {
+    path: "login",
+    loadComponent: () =>
+    import('./pages/login/page-login/page-login.component')
+      .then(m => m.PageLoginComponent)
+  },
   {
     path: "register",
     loadComponent: () =>

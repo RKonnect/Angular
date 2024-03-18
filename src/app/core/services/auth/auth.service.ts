@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
 import {BaseApiRestService} from "../../api/base-api-rest.service";
 import {HttpClient} from "@angular/common/http";
-import {observableToBeFn} from "rxjs/internal/testing/TestScheduler";
 import {Observable} from "rxjs";
 import {CredentialDto} from "../../models/dto/credential.dto";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
+
 })
 export class AuthService extends BaseApiRestService {
 
