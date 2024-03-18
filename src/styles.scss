@@ -1,13 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
-@import './variables.scss';
-
+@import "./variables.scss";
 
 // RESET
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
-html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -19,7 +70,11 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   text-size-adjust: none;
 }
 
-footer, header, nav, section, main {
+footer,
+header,
+nav,
+section,
+main {
   display: block;
 }
 
@@ -27,16 +82,21 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
-  content: '';
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
   content: none;
 }
 
@@ -50,13 +110,16 @@ input {
   border-radius: 0;
 }
 
-.app{
+.app {
   height: 100svh;
 }
 
 // FONT
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 
+* {
+  font-family: "Josefin sans", sans-serif;
+}
 .sm {
   font-size: 12px;
 }
@@ -74,16 +137,25 @@ input {
 }
 
 // COMMON
-.title{
-  color: $black;
-  font-family: 'Josefin sans';
-  font-size: 35px;
+.title-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
-.subTitle{
+.title {
+  color: $black;
+  font-family: "Josefin sans";
+  font-size: 30px;
+}
+
+.subTitle {
   color: black;
-  font-family: 'Josefin sans';
+  font-family: "Josefin sans";
   font-size: 18px;
+  text-align: center;
 }
 // HEADER
 // COMPONENTS
