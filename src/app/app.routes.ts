@@ -10,7 +10,7 @@ import {PageRecentMeetingComponent} from "./pages/recentMeeting/page-recent-meet
 import {PageReservationsComponent} from "./pages/reservations/page-reservations/page-reservations.component";
 import { PageRegisterComponent } from './pages/register/page-register/page-register.component';
 import { ProfileUpdateComponent } from './pages/profile/profile-update/profile-update.component';
-import {PageLoginComponent} from "./pages/login/page-login/page-login.component";
+import { NotificationsDetailComponent } from './pages/notifications/notifications-detail/notifications-detail.component';
 
 
 export const routes: Routes = [
@@ -70,6 +70,12 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/notifications/page-notifications/page-notifications.component')
         .then(m => PageNotificationsComponent)
+  },
+  {
+    path: "notifications-detail",
+    loadComponent: () =>
+      import('./pages/notifications/notifications-detail/notifications-detail.component')
+        .then(m => NotificationsDetailComponent)
   },
   {
     path: "settings",
