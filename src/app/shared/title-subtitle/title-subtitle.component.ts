@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
   styleUrl: './title-subtitle.component.scss'
 })
 export class TitleSubtitleComponent {
-  @Input({ required: true }) title: string = '';
+  @Input() title: string = '';
   @Input() subTitle: string = '';
   @Input() showArrow: boolean = false;
 

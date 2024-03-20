@@ -1,0 +1,16 @@
+<app-title-subtitle [showArrow]="true"></app-title-subtitle>
+<app-profil-card></app-profil-card>
+<div class="profil-aliments">
+    <h4>Préférences alimentaires</h4>
+    <app-buttons></app-buttons>
+    <h4>Allergies alimentaires</h4>
+    <app-buttons></app-buttons>
+</div>
+<p class="button-accept-text">En acceptant, vous ne pourrez plus modifier votre choix.</p>
+<div class="profil-buttons" width="90vw">
+    <app-buttons buttonText="Accepter la demande 🥳" buttonColor="#A5DC84"
+        textColor="#FFFFFF" width="70vw" height="50px" borderRadius="100px"
+        fontSize="16px" [cursorPointer]="true"></app-buttons>
+    <img src="/assets/button_assets/remove.png" alt="Refuser demande" class="remove-button"
+        width="50px" height="50px">
+</div>
