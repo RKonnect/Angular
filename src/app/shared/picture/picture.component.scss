@@ -1,21 +1,68 @@
 .swiper-container {
     height: 80vh;
     overflow: hidden;
-  }
-  
-  .swiper-slide {
+}
+
+.swiper-slide {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    position: relative;
+    overflow-y: hidden
 }
-  
-  .swiper-slide img {
+
+.imgResto {
     width: 100%;
     object-fit: cover;
-    height: 59vh;
-  }
-  
-.boutonMid{
+    height: 57vh;
+}
+
+.boutonMid {
     justify-content: center;
     display: flex;
+}
+
+
+.overlay-textUser {
+    position: absolute;
+    top: 3vh;
+    left: 1vh;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.overlay-textParticipants {
+    position: absolute;
+    top: 2.7vh;
+    right: 1.8vh;
+    color: white;
+    padding: 10px;
+}
+
+.overlay-texttags {
+    position: absolute;
+    bottom: 22vh;
+    background-color: white;
+    color: black;
+    padding: 6px;
+    left: 1vh;
+    opacity: 86%;
+    border-radius: 50px;
+    font-size: 11px;
+}
+
+.profilPic {
+    width: 45px;
+    height: 45px;
+    background-size: cover;
+    border-radius: 100px;
+    margin-right: 2px;
+}
+
+.textUser {
+    padding: 8px;
+    background-color: black;
+    margin-left: 8px;
 }
