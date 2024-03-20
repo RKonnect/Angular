@@ -13,10 +13,12 @@ export class ButtonsComponent {
   @Input() type: TypeButtonEnum = TypeButtonEnum.button;
   @Input() buttonColor: string = '#D9D18C';
   @Input() textColor: string = 'black';
-
-  changeText() {
-    this.buttonText = 'Texte apres clic';
-  }
+  @Input() width: string = '';
+  @Input() height: string = '';
+  @Input() borderRadius: string = '20px';
+  @Input() fontSize: string = '';
+  @Input() fontWeight: string = '';
+  @Input() cursorPointer: boolean = false;
 }
 
 
