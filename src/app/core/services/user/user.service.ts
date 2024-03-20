@@ -17,17 +17,19 @@ export class UserService extends BaseApiRestService {
     return this.http.get<User[]>(this.apiUrl, {headers: this.headers})
   }
 
-  getOne(id: string): Observable<User> {
-    return this.http.get<User>(this.apiUrl + id, { headers: this.headers })
+  getOne(id: number): Observable<User> {
+    console.log('getOne' , { headers: this.headers })
+    return this.http.get<User>(this.apiUrl + 'getById/' + id, { headers: this.headers })
   }
 
   update(user: User): Observable<any>{
     return this.http.put<User>(this.apiUrl, user, {headers: this.headers})
   }
-
+  /*
   delete(user: User): Observable<any>{
     return this.http.delete<User>(this.apiUrl, user, {headers: this.headers})
   }
+  */
 
   addTag(user: User):Observable<any>{
     return this.http.post<any>(this.apiUrl, user, {headers: this.headers})

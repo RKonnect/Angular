@@ -3,9 +3,11 @@ import { FormCredentialLoginComponent } from "../components/form/form-credential
 import { CredentialDto } from '../../../core/models/dto/credential.dto';
 import { AuthService } from '../../../core/services/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
-import { Subscription } from 'rxjs';
-import { Store } from '@ngxs/store';
+import { Observable, Subscription, switchMap, take } from 'rxjs';
+import { Select, Store } from '@ngxs/store';
 import { Login } from '../../../core/stores/user/user.action';
+import { UserModel, UserState } from '../../../core/stores/user/user.state';
+import { User } from '../../../core/models/User';
 
 @Component({
     selector: 'app-page-login',
@@ -16,14 +18,16 @@ import { Login } from '../../../core/stores/user/user.action';
   providers: [AuthService]
 })
 export class PageLoginComponent {
-
+  @Select(UserState) userState$!: Observable<UserModel>;
   authService: AuthService = inject(AuthService)
   store: Store = inject(Store)
+  
+  ngOnInit() {
+ 
+  }
   getCredential(credential: CredentialDto) {
-   // this.apiLogin($event)
-   console.log({credential})
-    this.store.dispatch(new Login(credential));
-
+    console.log({credential})
+      this.store.dispatch(new Login(credential));
   }
 
   apiLogin(credential: CredentialDto) {
