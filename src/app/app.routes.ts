@@ -69,12 +69,6 @@ export const routes: Routes = [
       import('./pages/settings/page-settings/page-settings.component')
         .then(m => PageSettingsComponent)
   },
-  // {
-  //   path: "login",
-  //   loadComponent: () =>
-  //     import('./pages/login/page-login/page-login.component')
-  //       .then(m => PageLoginComponent)
-  // },
   {
     path: "recentMeeting",
     loadComponent: () =>

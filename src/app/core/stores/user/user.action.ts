@@ -13,3 +13,8 @@ export class SignIn {
     static readonly type = '[User] SignIn';
     constructor(public credential: CredentialDto) { }
 }
+
+export class GetUserState {
+    static readonly type = '[User] Get User';
+    constructor() { }
+}
