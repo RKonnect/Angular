@@ -1,0 +1,22 @@
+<!-- my-buttons.component.html -->
+<div class="button-group">
+    <!-- Première liste déroulante pour "Aujourd'hui" -->
+    <select [(ngModel)]="selectedToday">
+        <option value="" disabled selected>-- Date --</option>
+        <option *ngFor="let option of todayOptions" [value]="option">{{ option }}</option>
+    </select>
+
+    <!-- Deuxième liste déroulante pour "Heure" -->
+    <select [(ngModel)]="selectedTime">
+        <option value="" disabled selected>-- Heure --</option>
+        <option *ngFor="let option of timeOptions" [value]="option">{{ option }}</option>
+    </select>
+
+    <!-- Troisième liste déroulante pour "Distance" -->
+    <select [(ngModel)]="selectedDistance">
+        <option value="" disabled selected>-- Distance --</option>
+        <option *ngFor="let option of distanceOptions" [value]="option">{{ option }}</option>
+    </select>
+
+    <button (click)="toggleInviteButton()">{{ inviteButtonText }}</button>
+</div>

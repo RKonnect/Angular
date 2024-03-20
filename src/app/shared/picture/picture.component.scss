@@ -1,0 +1,21 @@
+.swiper-container {
+    height: 80vh;
+    overflow: hidden;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+  
+  .swiper-slide img {
+    width: 100%;
+    object-fit: cover;
+    height: 59vh;
+  }
+  
+.boutonMid{
+    justify-content: center;
+    display: flex;
+}

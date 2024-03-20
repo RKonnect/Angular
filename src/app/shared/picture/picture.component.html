@@ -1,0 +1,14 @@
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" *ngFor="let reservation of reservations">
+      <img [src]="reservation.image" alt="Image">
+      <app-title-subtitle [title]="reservation.location" [subTitle]="reservation.city"></app-title-subtitle>
+
+      <div class="boutonMid">
+        <app-buttons buttonText="Voir la carte" textColor="white" buttonColor="black"></app-buttons>
+        <app-buttons buttonText="Tu m'invites" textColor="black" buttonColor="#D9D18C"></app-buttons>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>

@@ -1,0 +1,15 @@
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+.ng-untouched, .ng-pristine, .ng-valid {
+    border: none;
+}
