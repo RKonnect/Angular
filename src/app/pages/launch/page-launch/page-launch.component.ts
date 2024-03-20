@@ -1,33 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { ButtonsComponent } from '../../../shared/buttons/buttons.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-launch',
   standalone: true,
-  imports: [],
+  imports: [ButtonsComponent],
   templateUrl: './page-launch.component.html',
   styleUrls: ['./page-launch.component.scss']
 })
 export class PageLaunchComponent {
   swiper: any;
+  currentPage: number = 1;
+  router: Router = inject(Router);
 
   constructor() { }
 
-  allerAPage(page: number) {
-    this.swiper.slideTo(page - 1);
-  }
-
-  suivant() {
-    this.swiper.slideNext();
-  }
   async ngAfterViewInit() {
     const { Swiper } = await import('swiper');
 
-    const swiper = new Swiper('.swiper', {
+    this.swiper = new Swiper('.swiper', {
       direction: 'horizontal',
-      loop: true,
+      loop: false,
 
       pagination: {
         el: '.swiper-pagination',
@@ -41,39 +38,24 @@ export class PageLaunchComponent {
       scrollbar: {
         el: '.swiper-scrollbar',
       },
+
+      on: {
+        slideChange: () => {
+          this.currentPage = this.swiper.realIndex + 1;
+        },
+      },
     });
   }
 
-  activateGeolocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        position => this.showPosition(position),
-        error => this.showError(error)
-      );
-    } else {
-      alert("Geolocation is not supported by this browser.");
-    }
+  allerAPage(page: number) {
+    this.swiper.slideTo(page - 1);
   }
 
-  showPosition(position: GeolocationPosition) {
-    alert("Latitude: " + position.coords.latitude + 
-          "\nLongitude: " + position.coords.longitude);
+  suivant() {
+    this.swiper.slideNext();
   }
 
-  showError(error: GeolocationPositionError) {
-    switch(error.code) {
-      case error.PERMISSION_DENIED:
-        alert("User denied the request for Geolocation.");
-        break;
-      case error.POSITION_UNAVAILABLE:
-        alert("Location information is unavailable.");
-        break;
-      case error.TIMEOUT:
-        alert("The request to get user location timed out.");
-        break;
-      default:
-        alert("An unknown error occurred.");
-        break;
-    }
+  navigateTo(route: string): void {
+    this.router.navigateByUrl(route); 
   }
 }

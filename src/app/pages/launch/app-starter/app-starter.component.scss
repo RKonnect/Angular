@@ -1,0 +1,20 @@
+.home-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    .logo-container {}
+
+    .text-container {
+        text-align: center;
+
+        .app-name {
+            color: #000000;
+            font-size: 21px;
+            font-weight: 700;
+        }
+    }
+}
