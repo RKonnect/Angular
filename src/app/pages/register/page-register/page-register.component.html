@@ -12,18 +12,7 @@
     (emitData)="getCredential($event)">
     </app-form-credential>
     }
-    @else if (selectedForm == listFormName.Code) {
-    <app-form-code (emitData)="getCode()"></app-form-code>
-    }
-    @else if (selectedForm == listFormName.Avatar) {
-    <app-form-avatar (emitData)="getAvatar($event)"></app-form-avatar>
-    }
-    @else if (selectedForm == listFormName.CommonInfo) {
-    <app-form-common-infos (emitData)="getCommonInfo($event)"></app-form-common-infos>
-    }
-    @else if (selectedForm == listFormName.Tag) {
-    <app-form-user-tags (emitData)="getTags()"></app-form-user-tags>
-    }
+
   </section>
 
 </div>

@@ -3,6 +3,7 @@ import {BaseApiRestService} from "../../api/base-api-rest.service";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {CredentialDto} from "../../models/dto/credential.dto";
+import { User } from '../../models/User';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,7 @@ export class AuthService extends BaseApiRestService {
     super('Auth');
   }
 
-  register(credential:CredentialDto): Observable<void> {
+  register(credential:CredentialDto): Observable<User> {
     return this.http.post<any>(this.apiUrl + "register", credential, {headers: this.headers})
   }
 

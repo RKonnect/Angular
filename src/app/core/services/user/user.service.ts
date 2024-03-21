@@ -23,7 +23,7 @@ export class UserService extends BaseApiRestService {
   }
 
   update(user: User): Observable<any>{
-    return this.http.put<User>(this.apiUrl, user, {headers: this.headers})
+    return this.http.put<User>(this.apiUrl + 'update', user, {headers: this.headers})
   }
   /*
   delete(user: User): Observable<any>{

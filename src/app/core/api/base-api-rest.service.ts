@@ -10,7 +10,9 @@ export abstract class BaseApiRestService {
   protected headerFormData: HttpHeaders;
   protected cookieService = inject(CookieService)
   constructor(path?: string) {
+
     const token = this.cookieService.get('token') ?? ''; 
+    console.log("getToen" , { token })
     this.apiUrl = environment.apiUrl + (path ? path + '/' : '/');
     this.headers = new HttpHeaders({
       'Accept': 'application/json',
