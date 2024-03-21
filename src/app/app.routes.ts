@@ -13,6 +13,7 @@ import { ProfileUpdateComponent } from './pages/profile/profile-update/profile-u
 import { NotificationsDetailComponent } from './pages/notifications/notifications-detail/notifications-detail.component';
 import { AppStarterComponent } from './pages/launch/app-starter/app-starter.component';
 import { AuthChoiceComponent } from './pages/launch/auth-choice/auth-choice.component';
+import { PageRegisterInfoComponent } from './pages/register/page-register-info/page-register-info.component';
 
 
 export const routes: Routes = [
@@ -54,6 +55,12 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/register/page-register/page-register.component')
         .then(m => PageRegisterComponent)
+  },
+  {
+    path: "register/info",
+    loadComponent: () =>
+      import('./pages/register/page-register-info/page-register-info.component')
+        .then(m => PageRegisterInfoComponent)
   },
   {
     path: "restaurant",
