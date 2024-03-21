@@ -1,4 +1,4 @@
-interface Restaurant {
+export interface Restaurant {
   id?: number,
   userId?: number,
   url?: string,
