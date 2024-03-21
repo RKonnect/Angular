@@ -1,0 +1,27 @@
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" *ngFor="let reservation of reservations">
+      <img class="imgResto" [src]="reservation.image" alt="restaurant">
+      <div class="overlay-textUser">
+        <img class="profilPic" [src]="reservation.profilpic" width="10" alt="Photo de profil">
+        <p class="textUser">{{reservation.name}}, {{reservation.age}}</p>
+      </div>
+      <div class="overlay-textParticipants">
+        <img class="profilParticipants" [src]="reservation.participantsPic" width="10" alt="Photo de profil">
+
+      </div>
+      <div class="overlay-texttags">
+        <p>{{reservation.tags}}</p>
+      </div>
+      <app-title-subtitle [title]="reservation.location" [subTitle]="reservation.city"></app-title-subtitle>
+
+      <div class="boutonMid">
+        <app-buttons buttonText="Voir la carte" textColor="white" buttonColor="black"></app-buttons>
+        <app-buttons [buttonText]="reservation.buttonText" textColor="black" buttonColor="#D9D18C" id="modal-invit"
+                     (click)="openModal()"></app-buttons>
+        <app-modal *ngIf="showModal" (close)="closeModal()"></app-modal>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
