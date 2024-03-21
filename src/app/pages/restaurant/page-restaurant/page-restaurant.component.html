@@ -1,8 +1,8 @@
-<p>page-restaurant works!</p>
-
-
 @if (restaurants$ | async; as listRestaurants) {
     @for (restaurant of listRestaurants; track $index) {
         {{restaurant | json}}
     }
 }
+
+<app-picture-restaurant></app-picture-restaurant>
+

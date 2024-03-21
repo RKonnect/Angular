@@ -11,19 +11,33 @@ import {PageReservationsComponent} from "./pages/reservations/page-reservations/
 import { PageRegisterComponent } from './pages/register/page-register/page-register.component';
 import { ProfileUpdateComponent } from './pages/profile/profile-update/profile-update.component';
 import { NotificationsDetailComponent } from './pages/notifications/notifications-detail/notifications-detail.component';
+import { AppStarterComponent } from './pages/launch/app-starter/app-starter.component';
+import { AuthChoiceComponent } from './pages/launch/auth-choice/auth-choice.component';
 
 
 export const routes: Routes = [
   {
     path: "",
     pathMatch: 'full',
-    redirectTo: 'launch'
+    redirectTo: 'starter'
+  },
+  {
+    path: "starter",
+    loadComponent: () =>
+      import('./pages/launch/app-starter/app-starter.component')
+        .then(m => AppStarterComponent)
   },
   {
     path: "launch",
     loadComponent: () =>
       import('./pages/launch/page-launch/page-launch.component')
         .then(m => PageLaunchComponent)
+  },
+  {
+    path: "auth-choice",
+    loadComponent: () =>
+      import('./pages/launch/auth-choice/auth-choice.component')
+        .then(m => AuthChoiceComponent)
   },
   {
     path: "home",
