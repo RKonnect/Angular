@@ -1,10 +1,7 @@
-<app-profil-card></app-profil-card>
-<div class="profil-aliments">
-    <h4>Préférences alimentaires</h4>
-    <app-buttons></app-buttons>
-    <h4>Allergies alimentaires</h4>
-    <app-buttons></app-buttons>
-</div>
+@if (user$ | async; as user) {
+<app-profil-card [user]="user"></app-profil-card>
+}
+
 
 <div class="profil-buttons">
     <app-buttons buttonText="Modifier mon profil"

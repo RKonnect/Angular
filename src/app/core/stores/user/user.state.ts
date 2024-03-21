@@ -43,6 +43,8 @@ export class UserState {
                 // récupérer L'id user
                 const id: number = Object.values(JWT)[0] as number ?? 0
                 const email: string = Object.values(JWT)[1] as string ?? ''
+                const idUser: string = id.toString() as string
+                this.cookieService.set('idUser', idUser)
                 console.log(id);
                 const user: User = {
                     id,

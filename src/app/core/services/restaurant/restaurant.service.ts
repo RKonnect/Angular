@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {BaseApiRestService} from "../../api/base-api-rest.service";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import { Restaurant} from "../../models/Restaurant";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,11 @@ export class RestaurantService extends BaseApiRestService {
   }
 
   getAll(): Observable<any> {
-    return this.http.get<any>(this.apiUrl, {headers: this.headers})
+    return this.http.get<any>(this.apiUrl + 'getAll', {headers: this.headers})
+  }
+
+  getAllForUser(): Observable<any> {
+    return this.http.get<any>(this.apiUrl + 'getByUserId', { headers: this.headers })
   }
 
   getOne(id: string): Observable<any> {

@@ -17,7 +17,7 @@ export class UserService extends BaseApiRestService {
     return this.http.get<User[]>(this.apiUrl, {headers: this.headers})
   }
 
-  getOne(id: number): Observable<User> {
+  getOne(id: string | number): Observable<User> {
     console.log('getOne' , { headers: this.headers })
     return this.http.get<User>(this.apiUrl + 'getById/' + id, { headers: this.headers })
   }

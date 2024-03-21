@@ -1,4 +1,5 @@
-interface Food {
+export interface Food {
   id?: number,
-  name?: string
+  name?: string,
+  icon?: string,
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-label',
@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './label.component.scss'
 })
 export class LabelComponent {
-
+  @Input() label!: string
 }
