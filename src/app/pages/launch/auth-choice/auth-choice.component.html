@@ -1,0 +1,21 @@
+<div class="auth-choice-container">
+    <div class="logo-text-container">
+        <img class="logo-container" src="/assets/logo/Logo-color.png" alt>
+        <h1 class="app-name">R-Konnect</h1>
+        <p class="app-slogan">Des rencontres autour d’une table</p>
+    </div>
+    <div class="image-container">
+        <img src="/assets/launcher_assets/launch-start.png" width="100%" alt>
+    </div>
+    <div class="buttons-container">
+        <app-buttons buttonText="Je suis restaurateur 🍴" buttonColor="#000000" textColor="#FFFFFF"
+            fontSize="15px" fontWeight="400" height="50px" width="260px"
+            borderRadius="100px" [cursorPointer]="true"></app-buttons>
+        <app-buttons buttonText="Je veux faire des rencontres 🥳"
+            fontSize="15px" fontWeight="400" height="50px" width="260px"
+            borderRadius="100px" [cursorPointer]="true" (click)="navigateTo('/register')"></app-buttons>
+    </div>
+    <div class="redirect-container">
+        <p class="haveAccount" (click)="navigateTo('/login')">J’ai déja un compte</p>
+    </div>
+</div>
