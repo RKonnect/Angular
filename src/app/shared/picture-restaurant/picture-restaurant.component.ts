@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
-import {Swiper} from "swiper";
-import {TitleSubtitleComponent} from "../title-subtitle/title-subtitle.component";
-import {ButtonsComponent} from "../buttons/buttons.component";
-import {ModalComponent} from "../modal/modal.component";
-import {NgForOf, NgIf} from "@angular/common";
+import { Component } from '@angular/core';
+import { Swiper } from "swiper";
+import { TitleSubtitleComponent } from "../title-subtitle/title-subtitle.component";
+import { ButtonsComponent } from "../buttons/buttons.component";
+import { ModalComponent } from "../modal/modal.component";
+import { NgForOf, NgIf } from "@angular/common";
+import { ModalStripeComponent } from '../modal-stripe/modal-stripe.component';
 
 @Component({
   selector: 'app-picture-restaurant',
@@ -12,6 +13,7 @@ import {NgForOf, NgIf} from "@angular/common";
     TitleSubtitleComponent,
     ButtonsComponent,
     ModalComponent,
+    ModalStripeComponent,
     NgForOf,
     NgIf
   ],
@@ -69,6 +71,7 @@ export class PictureRestaurantComponent {
   }
 
   showModal: boolean = false;
+  showStripeModal: boolean = false;
 
   openModal() {
     this.showModal = true;
@@ -78,4 +81,16 @@ export class PictureRestaurantComponent {
   closeModal() {
     this.showModal = false;
   }
+
+  // Méthode pour fermer la modal
+  closeStripeModal() {
+    this.showStripeModal = false;
+  }
+
+  handleOpenNewPopup() {
+    // Par exemple :
+    this.showModal = false; // Ferme la popup actuelle
+    this.showStripeModal = true;
+  }
+
 }

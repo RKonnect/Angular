@@ -18,8 +18,10 @@
       <div class="boutonMid">
         <app-buttons buttonText="Voir la carte" textColor="white" buttonColor="black"></app-buttons>
         <app-buttons [buttonText]="reservation.buttonText" textColor="black" buttonColor="#D9D18C" id="modal-invit"
-                     (click)="openModal()"></app-buttons>
-        <app-modal *ngIf="showModal" (close)="closeModal()"></app-modal>
+          (click)="openModal()"></app-buttons>
+        <!-- Dans picture-restaurant.component.html -->
+        <app-modal *ngIf="showModal" (close)="closeModal()" (openNewPopup)="handleOpenNewPopup()"></app-modal>
+        <app-modal-stripe *ngIf="showStripeModal" (close)="closeStripeModal()"></app-modal-stripe>
       </div>
     </div>
   </div>
