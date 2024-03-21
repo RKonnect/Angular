@@ -15,6 +15,9 @@ import { error } from 'console';
 import { CookieService } from 'ngx-cookie-service';
 import { UserService } from '../../../core/services/user/user.service';
 import { Route, Router } from '@angular/router';
+
+import { Login } from '../../../core/stores/user/user.action';
+import { Store } from '@ngxs/store';
 // import { FormCredentialComponent } from '../components/form/form.credential/form.credential.component';
 
 @Component({
@@ -36,6 +39,7 @@ export class PageRegisterComponent {
   authService: AuthService = inject(AuthService)
   userService: UserService = inject(UserService)
   router: Router = inject(Router)
+  store: Store = inject(Store)
 
   backPage() {
     this.selectedForm -= 1
@@ -47,7 +51,7 @@ export class PageRegisterComponent {
     this.postNewUser();
    
     setTimeout(() => {
-      console.log('token' , this.cookieService.get('token'))
+      console.log('token == ' , this.cookieService.get('token'))
       this.router.navigate(['/register/info']);
     }, 3000); 
   }
@@ -82,7 +86,8 @@ export class PageRegisterComponent {
         },
       error: (err) => console.error('Error in registration', { err }),
       complete: () => {
-        this.login()
+      //  this.login()
+      this.store.dispatch(new Login(this.credential));
         subscription.unsubscribe()
 
       

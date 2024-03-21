@@ -12,6 +12,7 @@ import { FormCommonInfosComponent } from '../components/form/form.common-infos/f
 import { FormCredentialComponent } from '../components/form/form.credential/form.credential.component';
 import { FormUserTagsComponent } from '../components/form/form.user-tags/form.user-tags.component';
 import { UserCommonInfoDto } from '../../../core/models/dto/userCommonInfo.dto';
+import { Store } from '@ngxs/store';
 
 @Component({
   selector: 'app-page-register-info',
@@ -27,6 +28,7 @@ export class PageRegisterInfoComponent {
   listFormName = ListFormName
   newUser: User = {}
   userService: UserService = inject(UserService)
+
 
   getCode() {
     this.selectedForm += 1
