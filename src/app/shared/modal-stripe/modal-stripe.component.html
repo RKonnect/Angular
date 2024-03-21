@@ -1,0 +1,24 @@
+<!-- modal.component.html -->
+<div class="modal-background">
+  <div class="modal">
+    <button (click)="onClose()" class="close-button">X</button>
+    <div class="modal-inside">
+      <div class="title">Fonds de garantie</div>
+      <div class="subTitle">Pour assurer votre réservation en toute simplicité et sécurité veuillez fournir vos
+        coordonnées bancaires pour la caution. Celle-ci sera prélever si les règles ne sont pas respecté.</div>
+
+      <img src="/assets/invitations/stripe.png" alt="">
+      
+      <div class="noWorried">Aucune inquietude, vous ne serez prélever que lorque...</div>
+      <div class="cgu">Voir nos CGU</div>
+      
+      <div class="buttons">
+        <app-buttons buttonText="Annulé" buttonColor="#BABABA" textColor="white" width="115px" height="40px"
+          (click)="onClose()"></app-buttons>
+        <app-buttons buttonText="Proposer" buttonColor="#A5DC84" textColor="white" width="115px" height="40px"
+          (click)="onClose()" style="margin-bottom: 10px;"></app-buttons>
+      </div>
+
+    </div>
+  </div>
+</div>
