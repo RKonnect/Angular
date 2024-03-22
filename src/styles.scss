@@ -160,6 +160,7 @@ input {
 }
 
 .pages {
+  overflow-y: scroll;
   height: calc(100svh - 151px);
 }
 
