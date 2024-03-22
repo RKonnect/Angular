@@ -4,9 +4,5 @@
 .wrap {
   height: 100svh;
   margin: 0 auto;
-
-  .pages {
-    height: calc(100svh - 151px);
-    overflow-y: scroll;
-  }
+  overflow-y: scroll;
 }

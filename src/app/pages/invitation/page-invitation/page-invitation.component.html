@@ -1,9 +1,14 @@
-<app-filters></app-filters>
-<!--
+
+<app-searchbar></app-searchbar>
+<div class="pages">
+    <app-filters></app-filters>
+    <!--
 
 
 -->
 
-@if( invitations$ | async ; as invitations) {
-    <app-picture [invitations]="invitations" ></app-picture>
-}
+    @if( invitations$ | async ; as invitations) {
+    <app-picture [invitations]="invitations"></app-picture>
+    }
+</div>
+<app-navbar></app-navbar>

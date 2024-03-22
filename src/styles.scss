@@ -120,6 +120,7 @@ input {
 * {
   font-family: "Josefin sans", sans-serif;
 }
+
 .sm {
   font-size: 12px;
 }
@@ -158,9 +159,11 @@ input {
   text-align: center;
 }
 
-// FLATICONS
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css')
+.pages {
+  height: calc(100svh - 151px);
+}
 
-// HEADER
+// FLATICONS
+@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css') // HEADER
 // COMPONENTS
 // FOOTER

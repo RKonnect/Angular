@@ -1,8 +1,9 @@
-
-
-@if(reservation$ | async; as reservations) {
+<app-searchbar></app-searchbar>
+<div class="pages">
+    @if(reservation$ | async; as reservations) {
     @for(reservation of reservations; track $index) {
-        <app-reservation-card [reservation]="reservation"></app-reservation-card>
+    <app-reservation-card [reservation]="reservation"></app-reservation-card>
     }
-}
-   
+    }
+</div>
+<app-navbar></app-navbar>

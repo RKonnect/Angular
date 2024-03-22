@@ -4,17 +4,19 @@ import { Observable } from 'rxjs';
 import { InvitationService } from '../../../core/services/invitation/invitation.service';
 import { CookieService } from 'ngx-cookie-service';
 import { AsyncPipe, JsonPipe } from '@angular/common';
+import { NavbarComponent } from '../../../shared/navbar/navbar.component';
+import { SearchbarComponent } from '../../../shared/searchbar/searchbar.component';
 
 @Component({
     selector: 'app-page-reservations',
     standalone: true,
     templateUrl: './page-reservations.component.html',
     styleUrl: './page-reservations.component.scss',
-    imports: [ReservationCardComponent, AsyncPipe, JsonPipe]
+    imports: [ReservationCardComponent, AsyncPipe, JsonPipe, NavbarComponent, SearchbarComponent]
 })
 export class PageReservationsComponent {
     reservation$!: Observable<any>
-    invitationService : InvitationService = inject(InvitationService)
+    invitationService: InvitationService = inject(InvitationService)
     cookieService: CookieService = inject(CookieService)
     ngOnInit() {
         const id = this.cookieService.get('idUser')

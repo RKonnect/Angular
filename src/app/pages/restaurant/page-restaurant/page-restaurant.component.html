@@ -1,11 +1,13 @@
-@if (restaurants$ | async; as listRestaurants) {
+<app-searchbar></app-searchbar>
+<div class="pages">
+  @if (restaurants$ | async; as listRestaurants) {
 
-    @if(user$ | async; as user) {
-        <app-picture-restaurant [listRestaurant]="listRestaurants" [user]="user"></app-picture-restaurant>
-    }
-}
-@else {
+  @if(user$ | async; as user) {
+  <app-picture-restaurant [listRestaurant]="listRestaurants" [user]="user"></app-picture-restaurant>
+  }
+  }
+  @else {
   <app-dots-loading></app-dots-loading>
-}
-
-
+  }
+</div>
+<app-navbar></app-navbar>

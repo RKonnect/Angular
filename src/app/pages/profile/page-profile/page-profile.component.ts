@@ -8,13 +8,15 @@ import { CookieService } from 'ngx-cookie-service';
 import { AsyncPipe, JsonPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { User } from '../../../core/models/User';
+import { NavbarComponent } from '../../../shared/navbar/navbar.component';
+import { SearchbarComponent } from '../../../shared/searchbar/searchbar.component';
 
 @Component({
     selector: 'app-page-profile',
     standalone: true,
     templateUrl: './page-profile.component.html',
     styleUrl: './page-profile.component.scss',
-  imports: [AsyncPipe, JsonPipe,TitleSubtitleComponent, ProfilCardComponent, ButtonsComponent],
+  imports: [AsyncPipe, JsonPipe,TitleSubtitleComponent, ProfilCardComponent, ButtonsComponent,NavbarComponent,SearchbarComponent],
     providers: [UserService]
 })
 export class PageProfileComponent {
