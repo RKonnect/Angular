@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-reservation-card',
@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './reservation-card.component.scss'
 })
 export class ReservationCardComponent {
-
+  @Input({ required: true }) reservation: any
 }

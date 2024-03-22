@@ -14,13 +14,13 @@
 
     <label for="genderInput">Genre :</label>
     <select id="genderInput" formControlName="gender">
-      <option>Homme</option>
-      <option>Femme</option>
-      <option>Autre</option>
+      <option value="0">Femme</option>
+      <option value="1">Homme</option>
+      <option value="2">Autre</option>
     </select>
 
     <label for="dateOfBirthInput">Date de naissance:</label>
-    <input type="text" id="dateOfBirthInput" formControlName="dateOfBirth"/>
+    <input type="date" id="dateOfBirthInput" formControlName="dateOfBirth"/>
 
     <app-buttons [type]="TypeButtonEnum.submit" [buttonText]="'Suivant'" class="form-button"></app-buttons>
   </form>

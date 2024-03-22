@@ -44,13 +44,11 @@
 .overlay-texttags {
   position: absolute;
   bottom: 22vh;
-  background-color: white;
-  color: black;
+  display: flex;
   padding: 6px;
   left: 1vh;
   opacity: 86%;
-  border-radius: 50px;
-  font-size: 11px;
+ 
 }
 
 img.profilParticipants {

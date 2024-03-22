@@ -1,8 +1,11 @@
 @if (restaurants$ | async; as listRestaurants) {
-    @for (restaurant of listRestaurants; track $index) {
-        {{restaurant | json}}
+
+    @if(user$ | async; as user) {
+        <app-picture-restaurant [listRestaurant]="listRestaurants" [user]="user"></app-picture-restaurant>
     }
 }
+@else {
+  <app-dots-loading></app-dots-loading>
+}
 
-<app-picture-restaurant></app-picture-restaurant>
 

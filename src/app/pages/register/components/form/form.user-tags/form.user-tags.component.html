@@ -2,24 +2,20 @@
 
 
 <div class="container">
-  <div class="label-container">
-    <span class="label">#medecins</span>
-    <span class="label">#football</span>
-    <span class="label">#basketball</span>
-    <span class="label">#sport</span>
-    <span class="label">#jeuxvideos</span>
-    <span class="label">#politique</span>
-    <span class="label">#lecture</span>
-    <span class="label">#business</span>
-    <span class="label">#cuisine</span>
-    <span class="label">#startup</span>
-    <span class="label">#jeux</span>
-  </div>
-  <form action="">
+  @if(tags$ | async; as tags) {
+      <div class="label-container">
+    @for(tag of tags; track $index) {
+        <span (click)="postTag(tag)" class="label">#{{tag.title}}</span>
+    }
+    </div>
+  }
+
+
+  <form  action="">
     <label for="bio">Biographie :</label>
-    <textarea name="bio" id="bio"></textarea>
+    <textarea [(ngModel)]="biography" name="bio" id="bio"></textarea>
   </form>
 
-  <app-buttons [type]="TypeButtonEnum.submit" [buttonText]="'Finaliser mon profil'" class="form-button"></app-buttons>
+  <app-buttons (click)="onSubmit()" [type]="TypeButtonEnum.submit" [buttonText]="'Finaliser mon profil'" class="form-button"></app-buttons>
 
 </div>

@@ -8,6 +8,7 @@ import { Select, Store } from '@ngxs/store';
 import { Login } from '../../../core/stores/user/user.action';
 import { UserModel, UserState } from '../../../core/stores/user/user.state';
 import { User } from '../../../core/models/User';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-page-login',
@@ -21,13 +22,16 @@ export class PageLoginComponent {
   @Select(UserState) userState$!: Observable<UserModel>;
   authService: AuthService = inject(AuthService)
   store: Store = inject(Store)
-  
+  router: Router = inject(Router)
   ngOnInit() {
  
   }
   getCredential(credential: CredentialDto) {
     console.log({credential})
       this.store.dispatch(new Login(credential));
+      setTimeout(() => {
+        this.router.navigateByUrl('/')
+      }, 1)
   }
 
   apiLogin(credential: CredentialDto) {

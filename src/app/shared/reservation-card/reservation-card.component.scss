@@ -19,9 +19,27 @@
             justify-content: space-around;
             flex-wrap: wrap;
 
+            .banner {
+                max-width: 300px;
+                max-height: 100px;
+                filter: grayscale(80%);
+            }
+
             .guest-single {
+                width: 100%;
                 margin-top: 5px;
                 margin-bottom: 10px;
+
+                .images {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .banner {
+                    max-width: 300px;
+                    max-height: 100px;
+                    filter: grayscale(80%);
+                }
 
                 .card-image {
                     width: 50px;
