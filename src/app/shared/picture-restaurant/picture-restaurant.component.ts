@@ -28,30 +28,7 @@ export class PictureRestaurantComponent {
   @Input({ required: true }) listRestaurant!: Restaurant[] 
   @Input({ required: true }) user!: User
   userAge!: string
-  reservations = [
-    {
-      name: "Rodrigue S",
-      image: '../../assets/invitations/image1.png',
-      location: "Le Druide,",
-      city: "76130 Mont-Saint-Aignan",
-      buttonText: "On s'invite",
-      age: "20a",
-      profilpic: "../../assets/profil_pictures/chien.jpg",
-      participantsPic: "../../assets/profil_pictures/chien.jpg",
-      tags: "#famille"
-    },
-    {
-      name: "Sylvie89",
-      image: '../../assets/invitations/image2.jpg',
-      location: "Le Druide,",
-      city: "76130 Mont-Saint-Aignan",
-      buttonText: "Tu m'invite",
-      age: "71a",
-      profilpic: "../../assets/profil_pictures/chien.jpg",
-      participantsPic: "../../assets/profil_pictures/chien.jpg",
-      tags: "#cool"
-    }
-  ];
+
   swiper: any;
   currentDate = new Date()
 ngOnInit() {

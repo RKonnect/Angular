@@ -19,6 +19,14 @@ export class InvitationService extends BaseApiRestService {
     return this.http.get<any>(this.apiUrl + 'getById/' + id, { headers: this.headers })
   }
 
+  getAll(): Observable<any> {
+    return this.http.get<any>(this.apiUrl + 'getAll', { headers: this.headers })
+  }
+
+  joinInvitation(id: number): Observable<any> {
+    return this.http.get<any>(this.apiUrl + 'join/' + id, { headers: this.headers })
+  }
+
   postInvitation(newInvitation: NewInvitationDto): Observable<any> {
     this.updateHeaders();
     return this.http.post<NewInvitationDto>(this.apiUrl + 'add', newInvitation , { headers: this.headers })

@@ -1,10 +1,10 @@
 <div class="swiper-container">
   <div class="swiper-wrapper">
     <div class="swiper-slide" *ngFor="let restaurant of listRestaurant">
-      <img class="imgResto" [src]="restaurant.picture" alt="restaurant">
+      <img class="imgResto" [src]="'https://localhost:7178/uploads/' + restaurant.picture" alt="restaurant">
       <div class="overlay-textUser">
         <img class="profilPic" [src]="'https://localhost:7178/avatars/' + user.avatar" width="10" alt="Photo de profil">
-        <p class="textUser">{{user.name}}, {{userAge}}</p>
+        <p class="textUser">{{user.pseudo}}, {{userAge}}</p>
       </div>
       <div class="overlay-textParticipants">
         <!--

@@ -2,12 +2,12 @@
     <div class="card-reservation">
         <div class="guest-list">
             <div class="guest-single">
-                  <div class="images">
-                        <img class="card-image" src="https://i.pinimg.com/736x/19/b9/bd/19b9bd342e7fdae288929077888e8ef8.jpg"
+                <div class="images">
+                        <img class="card-image" [src]="'https://localhost:7178/avatars/' + reservation.host.avatar"
                     alt="">
                 </div>
                 
-                <p class="card-guest-name">Sophie29</p>
+                <p class="card-guest-name">{{reservation?.host?.pseudo ?? 'el host'}}</p>
             </div>
         </div>
         <div class="card-text">
