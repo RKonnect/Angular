@@ -31,12 +31,9 @@
             justify-content: center;
 
             .card-title {
-                font-weight: 400;
+                font-weight: 700;
                 margin-bottom: 5px;
-            }
-
-            .card-content {
-                font-weight: 300;
+              text-transform: capitalize;
             }
         }
 
