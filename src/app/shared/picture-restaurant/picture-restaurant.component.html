@@ -1,26 +1,32 @@
 <div class="swiper-container">
   <div class="swiper-wrapper">
-    <div class="swiper-slide" *ngFor="let reservation of reservations">
-      <img class="imgResto" [src]="reservation.image" alt="restaurant">
+    <div class="swiper-slide" *ngFor="let restaurant of listRestaurant">
+      <img class="imgResto" [src]="restaurant.picture" alt="restaurant">
       <div class="overlay-textUser">
-        <img class="profilPic" [src]="reservation.profilpic" width="10" alt="Photo de profil">
-        <p class="textUser">{{reservation.name}}, {{reservation.age}}</p>
+        <img class="profilPic" [src]="'https://localhost:7178/avatars/' + user.avatar" width="10" alt="Photo de profil">
+        <p class="textUser">{{user.name}}, {{userAge}}</p>
       </div>
       <div class="overlay-textParticipants">
+        <!--
         <img class="profilParticipants" [src]="reservation.participantsPic" width="10" alt="Photo de profil">
-
+      -->
       </div>
       <div class="overlay-texttags">
-        <p>{{reservation.tags}}</p>
+        
+         <app-label *ngFor="let tag of user.tags" [label]="tag.title ?? 'manger'"></app-label>
       </div>
-      <app-title-subtitle [title]="reservation.location" [subTitle]="reservation.city"></app-title-subtitle>
+      <app-title-subtitle [title]="restaurant.name ?? 'El restaurante'" [subTitle]="restaurant.localisation ?? 'Rouen'"></app-title-subtitle>
 
       <div class="boutonMid">
         <app-buttons buttonText="Voir la carte" textColor="white" buttonColor="black"></app-buttons>
-        <app-buttons [buttonText]="reservation.buttonText" textColor="black" buttonColor="#D9D18C" id="modal-invit"
+        <app-buttons buttonText="On s'invite" textColor="black" buttonColor="#D9D18C" id="modal-invit"
           (click)="openModal()"></app-buttons>
         <!-- Dans picture-restaurant.component.html -->
-        <app-modal *ngIf="showModal" (close)="closeModal()" (openNewPopup)="handleOpenNewPopup()"></app-modal>
+        <app-modal *ngIf="showModal && restaurant.id"
+        [restaurantId]="restaurant.id"
+         (close)="closeModal()"
+          (openNewPopup)="handleOpenNewPopup()"
+          ></app-modal>
         <app-modal-stripe *ngIf="showStripeModal" (close)="closeStripeModal()"></app-modal-stripe>
       </div>
     </div>

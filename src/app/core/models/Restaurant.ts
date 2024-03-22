@@ -3,6 +3,7 @@ export interface Restaurant {
   userId?: number,
   url?: string,
   name?: string,
+  localisation?: string,
   picture?: string,
   price?: number,
   vegetarianDish?: boolean,

@@ -77,7 +77,6 @@ export class UserState {
                         })
                         const userState = ctx.getState().user
                         sub.unsubscribe()
-                    //    this.router.navigateByUrl('/')
                     }
                 })
            //    

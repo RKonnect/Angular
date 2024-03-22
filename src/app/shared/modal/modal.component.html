@@ -18,31 +18,18 @@
 
           <div class="form-group">
             <label for="date">Date</label>
-            <select name="date" id="date" class="input-text">
-              <option value="today">Ajourd'hui</option>
-              <option value="tomorrow">Demain</option>
-            </select>
+            <input [(ngModel)]="invitationDate" type="datetime-local" id="invitationDate" name="invitationDate" class="input-text">
           </div>
-
           <div class="form-group">
-            <label for="time">Heure</label>
-            <select name="time" id="time" class="input-text">
-              <option value="timeone">18h30</option>
-              <option value="timetwo">19h30</option>
-            </select>
+            <label for="place">Nombres de places</label>
+            <input type="number" [min]="2" [(ngModel)]="userMax" [max]="13" id="userMax" name="userMax" class="input-text">
           </div>
 
           <div class="form-group">
             <label for="place">Nombres de places</label>
-            <input type="number" id="place" class="input-text">
-          </div>
-
-          <div class="form-group">
-            <label for="place">Nombres de places</label>
-            <select name="invite" id="invite" class="input-text">
-              <option value="weinvite">On s'invite</option>
-              <option value="iinvite">J'invite</option>
-              <option value="tuinvite">Tu m'invites</option>
+            <select name="payementType" id="payementType" class="input-text" [(ngModel)]="payementType">
+              <option [value]=0>On s'invite</option>
+              <option [value]=1>J'invite</option>
             </select>
           </div>
         </form>
