@@ -5,5 +5,5 @@
     <app-form-common-infos (emitData)="getCommonInfo($event)"></app-form-common-infos>
 }
 @else if (selectedForm == listFormName.Tag) {
-    <app-form-user-tags (emitData)="getTags()"></app-form-user-tags>
+    <app-form-user-tags (emitData)="getTags($event)"></app-form-user-tags>
 }

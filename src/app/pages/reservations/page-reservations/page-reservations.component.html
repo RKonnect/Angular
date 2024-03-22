@@ -1,1 +1,6 @@
 <app-reservation-card></app-reservation-card>
+
+@if(reservation$ | async; as reservation) {
+    {{ reservation | json }}
+}
+   

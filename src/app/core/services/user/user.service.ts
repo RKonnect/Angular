@@ -4,6 +4,7 @@ import {BaseApiRestService} from "../../api/base-api-rest.service";
 import {Observable} from "rxjs";
 import { User } from '../../models/User';
 import { CookieService } from 'ngx-cookie-service';
+import { Tag } from '../../models/Tag';
 
 @Injectable({
   providedIn: 'root'
@@ -35,9 +36,11 @@ export class UserService extends BaseApiRestService {
   }
   */
 
-  addTag(user: User):Observable<any>{
+
+
+  addTag(tag: Tag): Observable<any> {
     this.updateHeaders();
-    return this.http.post<any>(this.apiUrl, user, {headers: this.headers})
+    return this.http.get<any>(this.apiUrl + 'addTag/' + tag.id, { headers: this.headers })
   }
 
   addAllergy(user: User):Observable<any>{
