@@ -1,0 +1,22 @@
+<app-title-subtitle title="Choisissez votre avatar"
+                    subTitle="Ton avatar sera public et visible par les utilisateurs de l’app. Choisis celui qui te correspond le plus."
+                    class="title-box"></app-title-subtitle>
+<div class="container">
+  
+  @if(listAvatar$ | async; as listAvatar){
+
+    @for (avatar of listAvatar; track $index) {
+      @if(avatar.id){
+        <img
+         (click)="applyAvatar(avatar)"
+          src="{{'https://localhost:7178/avatars/' + avatar.name }}"
+           alt="Avatar utilisateur"
+           [classList]="currentId == avatar.id ? 'img-active' : ''"
+           />
+      }
+
+    }
+  }
+
+</div>
+<app-buttons (click)="emit()" [buttonText]="'Je choisis cette avatar'" class="form-button"></app-buttons>

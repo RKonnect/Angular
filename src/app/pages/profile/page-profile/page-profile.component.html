@@ -1,0 +1,13 @@
+@if (user$ | async; as user) {
+<app-profil-card [user]="user"></app-profil-card>
+}
+
+
+<div class="profil-buttons">
+    <app-buttons buttonText="Modifier mon profil"
+        textColor="#000000" width="90vw" height="50px" borderRadius="100px" fontSize="16px" [cursorPointer]="true" (click)="navigateTo('/profile-update')"></app-buttons>
+    <app-buttons buttonText="Paramètres de l’application" buttonColor="#000000"
+        textColor="#FFFFFF" width="90vw" height="50px" borderRadius="100px" fontSize="16px" [cursorPointer]="true" (click)="navigateTo('/settings')"></app-buttons>
+    <app-buttons buttonText="Se déconnecter" buttonColor="#FF5555"
+        textColor="#FFFFFF" width="90vw" height="50px" borderRadius="100px" fontSize="16px" [cursorPointer]="true" (click)="navigateTo('/')"></app-buttons>
+</div>

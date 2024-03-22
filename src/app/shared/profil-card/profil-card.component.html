@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="profile-card">
+        <div class="card-image-container">
+            <img class="card-image" src="{{'https://localhost:7178/avatars/' + user.avatar}}"
+                alt>
+        </div>
+        <p class="card-username">{{user.pseudo}}</p>
+        <p class="card-age">{{userAge}}</p>
+        <p class="card-description">{{user.biography}}</p>
+            <div class="label-flex">
+                @for (tag of user.tags; track $index) {
+                    @if(tag.title != null) {
+                    <app-label [label]="tag.title"></app-label>
+                    }
+                }
+            
+        </div>
+
+        <p style="margin: 1.5rem 0 .7rem 0;">Allergies alimentaires</p>
+        @for (allergy of user.allergy; track $index) {
+            @if(allergy != null) {
+                <app-food-icon [food]="allergy"></app-food-icon>
+            }
+        }
+
+        <p style="margin: .7rem 0;">Préférences alimentaires</p>
+        @for (food of user.favoriteFood; track $index) {
+            @if(food != null) {
+                <app-food-icon [food]="food"></app-food-icon>
+            }
+        }
+
+
+    </div>
+</div>

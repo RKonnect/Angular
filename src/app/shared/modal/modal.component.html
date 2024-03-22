@@ -1,0 +1,60 @@
+<!-- modal.component.html -->
+<div class="modal-background">
+  <div class="modal">
+    <button (click)="onClose()" class="close-button">X</button>
+    <div class="modal-inside">
+      <div class="title">Invitation</div>
+      <div class="rue">Le Druide, 76130 Mont-Saint-Aignan</div>
+      <div class="form-container">
+        <form action="">
+          <div class="form-group">
+            <label for="who">Qui ?</label>
+            <select name="who" id="who" class="input-text">
+              <option value="public">Public</option>
+              <option value="prive">Privé</option>
+              <option value="personnalise">Personnalisé</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="date">Date</label>
+            <select name="date" id="date" class="input-text">
+              <option value="today">Ajourd'hui</option>
+              <option value="tomorrow">Demain</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="time">Heure</label>
+            <select name="time" id="time" class="input-text">
+              <option value="timeone">18h30</option>
+              <option value="timetwo">19h30</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="place">Nombres de places</label>
+            <input type="number" id="place" class="input-text">
+          </div>
+
+          <div class="form-group">
+            <label for="place">Nombres de places</label>
+            <select name="invite" id="invite" class="input-text">
+              <option value="weinvite">On s'invite</option>
+              <option value="iinvite">J'invite</option>
+              <option value="tuinvite">Tu m'invites</option>
+            </select>
+          </div>
+        </form>
+
+        <div class="buttons">
+          <app-buttons buttonText="Annulé" buttonColor="#BABABA" textColor="white" width="115px"
+                       height="40px" (click)="onClose()"></app-buttons>
+          <app-buttons buttonText="Proposer" buttonColor="#A5DC84" textColor="white" width="115px"
+                       height="40px" (click)="onPropose()"></app-buttons>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+@import "../../../../../../variables.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+img{
+  border-radius: 50%;
+  border: 5px solid $primary-color;
+  width: 30%;
+}
+.img-active{
+  border-radius: 50%;
+  border: 5px solid $secondary-black;
+  width: 30%;
+}
+
+.form-button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+}

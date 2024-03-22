@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="small-card"
+        [style.backgroundColor]="cardColor"
+        [style.width]="width"
+        [style.height]="height">
+        <div class="card-image-container">
+            <img class="card-image"
+                [src]="imageUrl"
+                alt>
+        </div>
+        <div class="card-text-container">
+            <p class="card-title">
+                {{notificationDate}}
+            </p>
+            <p class="card-content">
+                {{userName}} a demandé à rejoindre votre rendez-vous du {{date}} au {{location}}
+            </p>
+        </div>
+        <div class="card-button-container">
+            <a class="card-button" [style.color]="buttonColor"
+                (click)="navigateTo('/notifications-detail')">
+                Détails
+            </a>
+        </div>
+    </div>
+</div>

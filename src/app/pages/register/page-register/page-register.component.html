@@ -1,0 +1,18 @@
+<div class="wrap">
+
+  <section class="form">
+<!--    {{selectedForm}}-->
+    @if(selectedForm != 1)  {
+    <div (click)="backPage()" class="icon"> < </div>
+    }
+
+    @if (selectedForm == listFormName.Credential){
+    <app-form-credential
+    [credential]="newUser"
+    (emitData)="getCredential($event)">
+    </app-form-credential>
+    }
+
+  </section>
+
+</div>

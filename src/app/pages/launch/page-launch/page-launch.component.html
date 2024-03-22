@@ -1,0 +1,92 @@
+<div class="swiper invite-container">
+  <div class="swiper-wrapper">
+
+    <!-- slide 1 -->
+    <div class="swiper-slide">
+      <div class="header-swiper">
+        <h1 class="swiper-title">Je t'invite</h1>
+        <p class="swiper-subtitle">
+          Afin de profiter au maximum de l’application, vous devez activer la
+          géolocalisation.
+        </p>
+      </div>
+
+      <div class="middle-swiper">
+        <span class="dot" [class.active]="currentPage === 1"
+          (click)="allerAPage(1)"></span>
+        <span class="dot" [class.active]="currentPage === 2"
+          (click)="allerAPage(2)"></span>
+        <span class="dot" [class.active]="currentPage === 3"
+          (click)="allerAPage(3)"></span>
+      </div>
+
+      <div class="swiper-button">
+        <app-buttons buttonText="Passer à la suite" fontSize="15px" fontWeight="400" height="50px" width="235px" borderRadius="100px" [cursorPointer]="true"
+          (click)="suivant()"></app-buttons>
+      </div>
+
+      <div class="image-swiper">
+        <img src="/assets/launcher_assets/launch1.png" height="100%" alt />
+      </div>
+    </div>
+
+    <!-- slide 2 -->
+    <div class="swiper-slide">
+      <div class="header-swiper">
+        <h1 class="swiper-title">Tu m’invites</h1>
+        <p class="swiper-subtitle">
+          Afin de profiter au maximum de l’application, vous devez activer la
+          géolocalisation.
+        </p>
+      </div>
+
+      <div class="middle-swiper">
+        <span class="dot" [class.active]="currentPage === 1"
+          (click)="allerAPage(1)"></span>
+        <span class="dot" [class.active]="currentPage === 2"
+          (click)="allerAPage(2)"></span>
+        <span class="dot" [class.active]="currentPage === 3"
+          (click)="allerAPage(3)"></span>
+      </div>
+
+      <div class="swiper-button">
+        <app-buttons buttonText="Passer à la suite" fontSize="15px" fontWeight="400" height="50px" width="235px" borderRadius="100px" [cursorPointer]="true"
+          (click)="suivant()"></app-buttons>
+      </div>
+
+      <div class="image-swiper">
+        <img src="/assets/launcher_assets/launch2.png" width="90%" alt />
+      </div>
+    </div>
+
+    <!-- slide 3 -->
+    <div class="swiper-slide">
+      <div class="header-swiper">
+        <h1 class="swiper-title">On s’invite</h1>
+        <p class="swiper-subtitle">
+          Afin de profiter au maximum de l’application, vous devez activer la
+          géolocalisation.
+        </p>
+      </div>
+
+      <div class="middle-swiper">
+        <span class="dot" [class.active]="currentPage === 1"
+          (click)="allerAPage(1)"></span>
+        <span class="dot" [class.active]="currentPage === 2"
+          (click)="allerAPage(2)"></span>
+        <span class="dot" [class.active]="currentPage === 3"
+          (click)="allerAPage(3)"></span>
+      </div>
+
+      <div class="swiper-button">
+        <app-buttons buttonText="Passer à la suite" fontSize="15px" fontWeight="400" height="50px" width="235px" borderRadius="100px" [cursorPointer]="true"
+          (click)="navigateTo('/auth-choice')"></app-buttons>
+      </div>
+
+      <div class="image-swiper">
+        <img src="/assets/launcher_assets/launch3.png" width="90%" alt />
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>

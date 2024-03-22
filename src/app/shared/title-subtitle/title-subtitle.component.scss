@@ -1,0 +1,38 @@
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .title-arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+        text-align: center;
+        width: 90vw;
+        position: relative;
+
+        .arrow {
+            position: absolute;
+            left: 0;
+            margin-left: 10px;
+            color: #D9D18C;
+            cursor: pointer;
+        }
+
+        .title {
+            font-size: 25px;
+            font-weight: 400;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .subTitle {
+        font-size: 15px;
+        font-weight: 400;
+        color: #747474;
+    }
+}
