@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, inject } from '@angular/core';
 import { Swiper } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -6,6 +6,8 @@ import 'swiper/css/pagination';
 import { CommonModule } from '@angular/common';
 import { ButtonsComponent } from "../buttons/buttons.component";
 import { TitleSubtitleComponent } from "../title-subtitle/title-subtitle.component";
+import { InvitationService } from '../../core/services/invitation/invitation.service';
+import { Subscriber, Subscription } from 'rxjs';
 
 
 @Component({
@@ -16,30 +18,8 @@ import { TitleSubtitleComponent } from "../title-subtitle/title-subtitle.compone
   imports: [ButtonsComponent, CommonModule, TitleSubtitleComponent]
 })
 export class PictureComponent implements AfterViewInit {
-  reservations = [
-    {
-      name: "Rodrigue S",
-      image:'../../assets/invitations/image1.png',
-      location: "Le Druide,",
-      city: "76130 Mont-Saint-Aignan",
-      buttonText: "On s'invite",
-      age: "20a",
-      profilpic: "../../assets/profil_pictures/chien.jpg",
-      participantsPic: "../../assets/profil_pictures/chien.jpg",
-      tags: "#famille"
-    },
-    {
-      name: "Sylvie89",
-      image:'../../assets/invitations/image2.jpg',
-      location: "Le Druide,",
-      city: "76130 Mont-Saint-Aignan",
-      buttonText: "Tu m'invite",
-      age: "71a",
-      profilpic: "../../assets/profil_pictures/chien.jpg",
-      participantsPic: "../../assets/profil_pictures/chien.jpg",
-      tags: "#cool"
-    }
-  ];
+  @Input({required : true}) invitations: any;
+  invitationService = inject(InvitationService)
   swiper: any;
 
   async ngAfterViewInit() {
@@ -55,6 +35,14 @@ export class PictureComponent implements AfterViewInit {
     } else {
       console.error('Swiper is not defined. Please check your import.');
     }
+  }
+
+  joinReservation(idReservation: number) {
+    const subscription: Subscription = this.invitationService.joinInvitation(+idReservation).subscribe({
+      next: (response) => console.log({response}),
+      error: (error) => console.error({error}),
+      complete: () => subscription.unsubscribe()
+    })
   }
 
   allerAPage(page: number) {

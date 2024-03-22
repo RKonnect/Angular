@@ -1,23 +1,25 @@
 <div class="swiper-container">
   <div class="swiper-wrapper">
-    <div class="swiper-slide" *ngFor="let reservation of reservations">
-      <img class="imgResto" [src]="reservation.image" alt="restaurant">
+    <div class="swiper-slide" *ngFor="let invitation of invitations">
+      <img class="imgResto" [src]="'https://localhost:7178/uploads/' +  invitation.restaurants.picture" alt="restaurant">
       <div class="overlay-textUser">
-        <img class="profilPic" [src]="reservation.profilpic" width="10" alt="Photo de profil">
-        <p class="textUser">{{reservation.name}}, {{reservation.age}}</p>
+        <img class="profilPic" [src]="'https://localhost:7178/avatars/' + invitation.host.avatar" width="10" alt="Photo de profil">
+        <p class="textUser">{{invitation.host.pseudo}}</p>
       </div>
       <div class="overlay-textParticipants">
-        <img class="profilParticipants" [src]="reservation.participantsPic" width="10" alt="Photo de profil">
+        @for(guest of invitation.guest ; track $index ) {
+          <img class="profilParticipants" [src]="'https://localhost:7178/avatars/' + guest.avatar" width="10" alt="Photo de profil">
+        }
 
       </div>
-      <div class="overlay-texttags">
-        <p>{{reservation.tags}}</p>
-      </div>
-      <app-title-subtitle [title]="reservation.location" [subTitle]="reservation.city"></app-title-subtitle>
+ 
+      <app-title-subtitle [title]="invitation.restaurants.name ?? 'El restaurante'" 
+      [subTitle]="invitation.restaurants.city ?? 'Rouen'">
+      </app-title-subtitle>
 
       <div class="boutonMid">
         <app-buttons buttonText="Voir la carte" textColor="white" buttonColor="black"></app-buttons>
-        <app-buttons [buttonText]="reservation.buttonText" textColor="black" buttonColor="#D9D18C"></app-buttons>
+        <app-buttons (click)="joinReservation(invitation.invitationId)" buttonText="on s'invite" textColor="black" buttonColor="#D9D18C"></app-buttons>
       </div>
     </div>
   </div>
